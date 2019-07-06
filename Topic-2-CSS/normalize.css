@@ -49,9 +49,11 @@ table {
 
 header{
     background-color: green; 
+    text-align: center;
 }
 footer{
     background-color: yellow;
+    text-align: center;
 }
 aside{
     background-color: blue;
