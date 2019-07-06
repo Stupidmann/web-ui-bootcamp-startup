@@ -46,6 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 header{
     background-color: green; 
 }
@@ -57,4 +58,9 @@ aside{
 }
 nav{
     background-color: aqua;
+}
+
+html{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
 }
