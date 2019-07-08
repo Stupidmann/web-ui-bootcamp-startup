@@ -47,47 +47,36 @@ table {
 	border-spacing: 0;
 }
 
-header {
-    background-color: green; 
+body {
+	background: grey;
 	text-align: center;
-}
-footer {
-    background-color: yellow;
-	text-align: center;
-}
-aside {
-    background-color: blue;
-}
-nav {
-    background-color: aqua;
-}
 
-html body {
-    font-family: 'Times New Roman', Times, serif;  
-    font-size: 14px;
 }
-
-.header {
-	font-size: 46px;
+header.header {
+    background: gainsboro;
+    padding: 20px;
+	border-radius: 10px;
+	margin: 10px;
 }
-.footer {
-	font-size: 10px;
+footer.footer {
+	background: gainsboro;
+    padding: 20px;
+	border-radius: 10px;
+	margin: 10px;
 }
-.content {
-	font-size: 14px;
+div nav.navigation {
+    background: gainsboro;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 20%;
+    float: left;
 }
-.navigation{
-	font-size: 12px;
-	padding: 140px;
+div aside.sidebar {
+    background: gainsboro;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 20%;
+    float: right;
 }
-.sidebar {
-	font-size: 10px;
-	margin: 100px;
-}
-.header, .sidebar, .footer {
-	background-color: magenta;
-}
-
-/*.oh-no-inline-styles {
-	background: green !important;
-}*/
