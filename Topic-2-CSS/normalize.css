@@ -62,8 +62,8 @@ nav {
     background-color: aqua;
 }
 
-html {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+html body{
+    font-family: 'Times New Roman', Times, serif;  
     font-size: 14px;
 }
 
@@ -81,4 +81,10 @@ html {
 }
 .sidebar {
 	font-size: 10px;
+}
+.header, .sidebar, .footer {
+	background-color: magenta;
+}
+.oh-no-inline-styles {
+	background: green !important;
 }
