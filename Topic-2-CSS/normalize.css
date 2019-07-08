@@ -49,11 +49,11 @@ table {
 
 header {
     background-color: green; 
-    text-align: center;
+	text-align: center;
 }
 footer {
     background-color: yellow;
-    text-align: center;
+	text-align: center;
 }
 aside {
     background-color: blue;
@@ -65,4 +65,20 @@ nav {
 html {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14px;
+}
+
+.header {
+	font-size: 46px;
+}
+.footer {
+	font-size: 10px;
+}
+.content {
+	font-size: 14px;
+}
+.navigation{
+	font-size: 12px;
+}
+.sidebar {
+	font-size: 10px;
 }
