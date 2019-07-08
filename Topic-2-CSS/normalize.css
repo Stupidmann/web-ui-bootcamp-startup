@@ -47,22 +47,22 @@ table {
 	border-spacing: 0;
 }
 
-header{
+header {
     background-color: green; 
     text-align: center;
 }
-footer{
+footer {
     background-color: yellow;
     text-align: center;
 }
-aside{
+aside {
     background-color: blue;
 }
-nav{
+nav {
     background-color: aqua;
 }
 
-html{
+html {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14px;
 }
