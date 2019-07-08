@@ -46,37 +46,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-body {
-	background: grey;
-	text-align: center;
-
-}
-header.header {
-    background: gainsboro;
-    padding: 20px;
-	border-radius: 10px;
-	margin: 10px;
-}
-footer.footer {
-	background: gainsboro;
-    padding: 20px;
-	border-radius: 10px;
-	margin: 10px;
-}
-div nav.navigation {
-    background: gainsboro;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    width: 20%;
-    float: left;
-}
-div aside.sidebar {
-    background: gainsboro;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    width: 20%;
-    float: right;
-}
