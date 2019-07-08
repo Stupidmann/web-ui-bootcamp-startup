@@ -62,7 +62,7 @@ nav {
     background-color: aqua;
 }
 
-html body{
+html body {
     font-family: 'Times New Roman', Times, serif;  
     font-size: 14px;
 }
@@ -78,13 +78,16 @@ html body{
 }
 .navigation{
 	font-size: 12px;
+	padding: 140px;
 }
 .sidebar {
 	font-size: 10px;
+	margin: 100px;
 }
 .header, .sidebar, .footer {
 	background-color: magenta;
 }
-.oh-no-inline-styles {
+
+/*.oh-no-inline-styles {
 	background: green !important;
-}
+}*/
