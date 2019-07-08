@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>Name</label>
+        <input type="text">
+
+        <label>Last Name</label>
+        <input type="text"><br>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Birthday</label>
+        <input type="date"><br>
+
+        <label>Select your favorite sport</label>
+        <input type="text" id="t1" name="sports" list="l1" required>
+        <datalist id="l1">
+            <option>Football</option>
+            <option>Basketball</option>
+            <option>Tenis</option>
+            <option>Voleyball</option>
+            <option>Rugby</option>
+            <option>Golf</option>
+        </datalist><br>
+
+        <label for="ta1">Tell us a little about you</label><br>
+        <textarea id="ta1" maxlength="200" rows="5"></textarea><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
