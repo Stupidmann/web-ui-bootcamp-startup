@@ -1,17 +1,21 @@
 let btn = document.querySelector('button');
 
+const week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
 btn.onclick = function () {
-    let txt = document.getElementById("idInput").value;
-    palindrome(txt);
+    const day = parseInt(document.getElementById("day").value);
+    const n = parseInt(document.getElementById("num").value);
 
-    function palindrome(str) {  
-        let cleanStr = str.replace(/[^A-Z0-9]/ig,'');
-        let reverseStr = cleanStr.split('').reverse().join('');
+    getDayAfter (week , n+day);
 
-        if(reverseStr == cleanStr){
-            document.getElementById("output").value = "It\'s a palindrome";            
-        }else{
-            document.getElementById("output").value = "It\'s not a palindrome";
+    function getDayAfter(arr , count) {
+        ln = arr.length;
+        b = new Array();
+
+        for (i=0; i<=count;i++) {
+            b.push(arr[i%ln]);
         }
-    }
+        
+        alert(b[count]);
+    } 
 }
