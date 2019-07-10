@@ -3,6 +3,7 @@ let btn = document.querySelector('button');
 btn.onclick = function () {
     let txt = document.getElementById("idInput").value;
     wordLength = txt.length;
+    if (txt.contains)
 
     if (wordLength%2 == 0){
         middle = wordLength/2;
