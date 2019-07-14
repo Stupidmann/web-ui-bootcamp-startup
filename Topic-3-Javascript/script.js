@@ -13,11 +13,23 @@ btn.onclick = function () {
             pp = data.value.joke;
             console.log(id);
             arr.push(id);
-            if (arr.includes(id) === true){                   
-                document.getElementById("jokeNorris").value = pp;
-            }else {
-                alert("click again!");
+            function getUnique(arr){
+
+                return arr.filter((e,i)=> arr.indexOf(e) >= i)
+
             }
+
+            if(getUnique(arr).includes(id)) {
+                document.getElementById("jokeNorris").value = pp;
+            }
+            /*let repeated = function (id) {
+                return arr.includes(id);
+            }
+            if (arr.some(repeated) === true){                   
+                alert("click again!");
+            }else {
+                document.getElementById("jokeNorris").value = pp;
+            }*/
 
         })
         .catch(err => {
