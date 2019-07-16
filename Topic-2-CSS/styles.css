@@ -66,19 +66,28 @@ section.content .row footer{
     background: #c2c2c2;
     height: 25vh;
     border-radius: 10px;
+    padding-top: 10vh;
     
 }
 .container > .row .description {
     background: #c2c2c2;
     height: 25vh;
     border-radius: 10px;
+    padding-top: 5vh;
 }
-img {
-    width: 300px;
-    max-height: 200px;
-    padding: 15px;
+.myImg {
+    max-width: 85%;
+    max-height: auto;
+    margin-top: 5vh;
 	
 }
 div.row.clearfix {
     max-width: 100%;
+}
+
+.myContainer{
+  background: gainsboro;
+  height:auto;
+  overflow:auto;
+  border-radius: 10px;
 }
