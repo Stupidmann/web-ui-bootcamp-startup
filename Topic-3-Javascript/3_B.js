@@ -1,15 +1,12 @@
 let btn = document.querySelector("button");
+let url = "https://api.github.com/search/repositories?q=javascript";
 
 btn.addEventListener("click", function() {
-    async function getList () {
-        let url = "https://api.github.com/search/repositories";
-        let res = await fetch(url);
-        let json = await res.json();
-
-        if (json.status !== 200){
-            throw Error("error!");
-        }
-        console.log(json);
+    async function API () {
+        const baseUrl = url;
+        const res = await fetch(baseUrl);
+        const data = await res.json();
+        return data; 
     }
-    getList();
+    API().then(console.log);
 })
