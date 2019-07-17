@@ -1,6 +1,7 @@
 let btn = document.querySelector("button");
 let url = "https://api.github.com/search/repositories?q=javascript";
 const divHtml = document.getElementById("divHtml");
+//const ulHtml = document.getElementById("ulHtml");
 
 btn.addEventListener("click", function() {
     async function API () {
@@ -9,11 +10,18 @@ btn.addEventListener("click", function() {
         const data = await res.json();
 
         return data.items.forEach(i => {
-            const anchor = document.createElement("a")
-            anchor.href = i.html_url
+            //const title = document.createElement("li");
+            const anchor = document.createElement("a");
+            
+            anchor.href = i.html_url;
             anchor.textContent = i.full_name;
-            divHtml.appendChild(anchor)
-            divHtml.appendChild(document.createElement("br"))
+            divHtml.appendChild(anchor);
+
+            //ulHtml.appendChild(title);
+            //anchor = document.getElementById(divHtml);
+            //document.body.insertBefore(title, anchor);
+
+            divHtml.appendChild(document.createElement("br"));
         })
     }
     API();
