@@ -1,6 +1,6 @@
 let btn = document.querySelector("button");
 let url = "https://api.github.com/search/repositories?q=javascript";
-const divHtml = document.getElementById("divHtml");
+const divHtml = document.getElementById("liHtml");
 //const ulHtml = document.getElementById("ulHtml");
 
 btn.addEventListener("click", function() {
@@ -16,6 +16,7 @@ btn.addEventListener("click", function() {
             anchor.href = i.html_url;
             anchor.textContent = i.full_name;
             divHtml.appendChild(anchor);
+            //divHtml.appendChild(document.write("<li>" + anchor + "</li>"));
 
             //ulHtml.appendChild(title);
             //anchor = document.getElementById(divHtml);
