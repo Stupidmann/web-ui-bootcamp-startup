@@ -1,5 +1,6 @@
 class Movie {
-    constructor (title,year,duration){
+
+    constructor (title,year,duration) {
         this.title = title;
         this.year = year;
         this.duration = duration;
@@ -12,6 +13,12 @@ class Movie {
     }
     resume() {
         console.log("resuming...");
+    }
+}
+class Actor {
+    constructor (name,age) {
+        this.name = name;
+        this.age = age;
     }
 }
 
