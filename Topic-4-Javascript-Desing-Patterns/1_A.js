@@ -15,4 +15,9 @@ class Movie {
     }
 }
 
+let movie1 = new Movie;
+movie1.title = "Madagascar";
+movie1.play();
 
+movie1.year = "2005";
+console.log(movie1.title + " " + movie1.year);
