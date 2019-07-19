@@ -23,5 +23,10 @@ btn.addEventListener("click", function() {
         })
     }
     let search = document.getElementById("search").value;
-    API(search);
+    if (search == ""){
+        alert("search something!!!");
+    }else {
+        API(search);
+    }
+    
 })
