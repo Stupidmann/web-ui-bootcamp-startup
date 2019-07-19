@@ -1,3 +1,4 @@
+//RENAME FILE BEFORE COMMIT
 class Movie {
 
     constructor (title,year,duration) {
@@ -15,10 +16,29 @@ class Movie {
         console.log("resuming...");
     }
 }
+
 class Actor {
     constructor (name,age) {
         this.name = name;
         this.age = age;
+    }
+}
+
+class EventEmiter {
+    constructor () {
+
+    }
+    on (eventName , callback) {
+        let event = eventName;
+        callback ({
+            //does something
+        });
+    }
+    emit (eventName) {
+        eventName();
+    }
+    off (eventName , callback) {
+        //
     }
 }
 
