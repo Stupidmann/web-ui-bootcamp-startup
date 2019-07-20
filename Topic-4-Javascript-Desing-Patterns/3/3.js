@@ -11,7 +11,7 @@ class EventEmiter {
     }
     emit (eventName) {
         this.events[eventName].forEach(callback =>
-            callback());       
+            callback(`The ${eventName} has been emited`));
     }
     off (eventName , callback) {
         let newEvents = this.events[eventName].filter(c => c !== callback);
@@ -30,13 +30,13 @@ class Movie extends EventEmiter{
         this.cast = [];
     }
     play() {
-        this.on(console.log("playing... " + this.title));
+        this.emit("play");
     }
     pause() {
-        this.on(console.log("pausing... " + this.title));
+        this.emit("pause");
     }
     resume() {
-        this.on(console.log("resuming... " + this.title));
+        this.emit("resume");
     }
     addCast(cast) {
         this.cast = cast;
@@ -57,13 +57,18 @@ class Actor {
     }
 }
 
-const terminator = new Movie('Terminator I', 1985, 60);
-const arnold = new Actor('Arnold Schwarzenegger', 50);
-const otherCast = [
-  new Actor('Paul Winfield', 50),
-  new Actor('Michael Biehn', 50),
-  new Actor('Linda Hamilton', 50)
-];
+class Logger {
+    constructor () {
 
-terminator.addCast(arnold);
-terminator.addCast(otherCast);
+    }
+    log (info) {
+        console.log(info);
+    }
+}
+
+const terminator = new Movie('Terminator I', 1985, 60);
+
+let log1 = new Logger();
+
+terminator.on("play",log1.log);
+terminator.play();
