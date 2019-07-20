@@ -26,21 +26,35 @@ class Actor {
 
 class EventEmiter {
     constructor () {
-
+        this.events = {};
     }
     on (eventName , callback) {
-        let event = eventName;
-        callback ({
-            //does something
-        });
+        if ( this.events[eventName]) {
+            this.events[eventName].push(callback);
+        } else {
+            this.events[eventName] = [callback];
+        }        
     }
     emit (eventName) {
-        eventName();
+        this.events[eventName].forEach(callback =>
+            callback());       
     }
     off (eventName , callback) {
-        //
+        let newEvents = this.events[eventName].filter(c => c !== callback);
+        this.events[eventName] = newEvents;
     }
+    
 }
+const logHola = function () {
+    console.log("holasas");
+}
+let test = new EventEmiter;
+
+test.on("hola",logHola);
+
+test.off("hola",logHola);
+
+test.emit("hola");
 
 let movie1 = new Movie;
 movie1.title = "Madagascar";
