@@ -1,0 +1,29 @@
+<h2>My Favorite Movies</h2>
+<div>
+    <ul class="list">
+        <li *ngFor="let list of list" [class.selected]="list === selectedMovie"
+        (click)="onSelect(list)">
+            <span class="badge">{{list.name}}</span>
+        </li>
+    </ul>
+
+    <div *ngIf="selectedMovie">
+        <h2>{{selectedMovie.name | uppercase}} Details</h2>
+        <div><span>Id: </span>{{selectedMovie.id}}</div>
+        <div><span>Name: </span>{{selectedMovie.name}}</div>
+        <div><span>Year: </span>{{selectedMovie.year}}</div>
+        <div><span>Duration: </span>{{selectedMovie.duration}}</div>
+        <!--<div>
+          <label>name:
+            <input [(ngModel)]="selectedMovie.name" placeholder="name"/>
+          </label>
+          <label>year:
+            <input [(ngModel)]="selectedMovie.year" placeholder="year"/>
+          </label>
+          <label>duration:
+            <input [(ngModel)]="selectedMovie.duration" placeholder="duration"/>
+          </label>
+        </div> -->
+    </div>
+
+</div>
