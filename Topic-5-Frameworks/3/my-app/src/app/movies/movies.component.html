@@ -1,0 +1,35 @@
+<h2>Movies</h2>
+
+<form (submit)="addMovie()">
+    <h3>Add a new Movie!</h3>
+    <input type="text" [(ngModel)]="movieName" placeholder="Name" [ngModelOptions]="{standalone: true}" required>
+    <input type="number" [(ngModel)]="movieYear" placeholder="Year" [ngModelOptions]="{standalone: true}">
+    <input type="number" [(ngModel)]="movieDuration" placeholder="Duration" [ngModelOptions]="{standalone: true}">
+
+    <button type="submit">Add Movie</button>
+</form>
+
+<ul>
+    <li *ngFor="let movie of movieList" (click)="onSelect(movie.name)">
+        {{movie.name}}
+        <button (click)="deleteMovie(movie.name)">Delete</button> 
+    </li>
+</ul>
+
+<div *ngIf="mostrar">
+    <div *ngFor="let movie of movieSelected">
+        <h2>{{movie.name | uppercase}} Details</h2>
+        <label>Name:
+            <input [(ngModel)]="movie.name" placeholder="name"/>
+        </label>
+        <label>Year:
+            <input [(ngModel)]="movie.year" placeholder="year"/>
+        </label>
+        <label>Duration:
+            <input [(ngModel)]="movie.duration" placeholder="duration"/>
+        </label>
+        
+        <button (click)="editMovie(movie.name,movie.year,movie.duration)"> Save </button>
+    </div>
+</div>
+
