@@ -1,3 +1,4 @@
+import { PokeApiService } from './poke-api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import { MyTeamComponent } from './my-team/my-team.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,17 +20,21 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
     FooterComponent,
     HomeComponent,
     NotFoundComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    MyTeamComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    /*RouterModule.forRoot([
+    HttpClientModule,
+    RouterModule.forRoot([
       { path:"", component:HomeComponent},
+      { path:"pokemonDetails", component:PokemonDetailsComponent },
+      { path:"myTeam", component:MyTeamComponent }, 
       { path:"**", component:NotFoundComponent},
-    ])*/
+    ])
   ],
-  providers: [],
+  providers: [PokeApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
