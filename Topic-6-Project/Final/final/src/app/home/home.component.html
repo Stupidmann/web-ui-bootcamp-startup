@@ -1,4 +1,16 @@
 <p>home works!</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aperiam vitae libero ipsa dolorum! Deleniti praesentium eligendi recusandae quia saepe assumenda sequi illum accusantium omnis accusamus deserunt, iusto debitis eaque.
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum delectus sit earum ipsum quaerat amet totam harum numquam? A ut repellendus suscipit porro aperiam iste dicta ullam quos accusantium impedit
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum delectus sit earum ipsum quaerat amet totam harum numquam? A ut repellendus suscipit porro aperiam iste dicta ullam quos accusantium impedit
 </p>
+
+<div *ngIf="pokemon$">
+    <div *ngFor="let pokemon of pokemon$.results ">
+        <p> {{ pokemon.name}} </p>      
+         
+    </div>
+</div>
+
+
+<ng-template #loading>
+    <p>loading ...</p>
+</ng-template>

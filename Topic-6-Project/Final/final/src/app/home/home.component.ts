@@ -1,6 +1,7 @@
 import { PokeApiService } from './../poke-api.service';
 import { Pokemon } from './../pokemon';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   pokemon$: Pokemon[];
+  pokeObs: any;
 
-  constructor(private pokeApi:PokeApiService) { }
-
-  ngOnInit() {
-    console.log(this.getPokemon());
+  constructor(private pokeApi:PokeApiService) { 
+    
+    this.getPokemon();
   }
 
-  getPokemon() {
-    return this.pokeApi.getPokemon()
-      .subscribe(data => this.pokemon$ = data);
+  ngOnInit() {
+    this.pokeObs = this.pokeApi.getPokemon();
+    console.log(this.pokeObs)
+    console.log(this.pokemon$)
+  }
+
+  getPokemon() { //busqueda por id
+    this.pokeApi.getPokemon().subscribe(
+      (data:Pokemon[]) => this.pokemon$ = data);
   }
 
 }
