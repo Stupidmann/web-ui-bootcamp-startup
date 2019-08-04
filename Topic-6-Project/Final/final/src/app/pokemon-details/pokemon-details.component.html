@@ -1,1 +1,13 @@
 <p>pokemon-details works!</p>
+
+<div *ngIf="(pokeObs | async) as poke ">
+        <ul>
+            <li>
+                {{poke.name}}
+            </li>
+            <li>              
+                <img [src]="getImageUrl(poke.id)" >
+            </li>
+        </ul>
+        
+</div>

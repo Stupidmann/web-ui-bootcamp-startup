@@ -29,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot([
       { path:"", component:HomeComponent},
-      { path:"pokemonDetails", component:PokemonDetailsComponent },
+      { path:"pokemonDetails/:id", component:PokemonDetailsComponent },
       { path:"myTeam", component:MyTeamComponent }, 
       { path:"**", component:NotFoundComponent},
     ])

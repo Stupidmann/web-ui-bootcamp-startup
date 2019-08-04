@@ -10,20 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   pokemon$: Pokemon[];
-  pokeObs: any;
 
   constructor(private pokeApi:PokeApiService) { 
     
-    this.getPokemon();
   }
 
   ngOnInit() {
-    this.pokeObs = this.pokeApi.getPokemon();
-    console.log(this.pokeObs)
-    console.log(this.pokemon$)
+    this.getPokemon();
   }
 
-  getPokemon() { //busqueda por id
+  getPokemon() {
     this.pokeApi.getPokemon().subscribe(
       (data:Pokemon[]) => this.pokemon$ = data);
   }
