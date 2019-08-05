@@ -9,6 +9,7 @@
             </li>
         </ul>        
 </div>-->
+
 <div *ngIf="pokemon else loading">
     <ul>
         <li>Name: {{pokemon.name | titlecase}}</li>
@@ -31,6 +32,11 @@
         </li>
         <img [src]="getImageUrl(pokemon.id)" >
         <img [src]="pokemon.sprites.front_shiny">
+        <li>Stats
+            <ul *ngFor="let item of pokemon.stats">
+                <li>{{item.stat.name}}: {{item.base_stat}}</li>
+            </ul>
+        </li>
         
     </ul>
 </div>

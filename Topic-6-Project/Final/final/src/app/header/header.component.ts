@@ -1,4 +1,7 @@
+import { ActivatedRoute, Router } from '@angular/router';
+import { PokeApiService } from './../poke-api.service';
 import { Component, OnInit } from '@angular/core';
+import { PokemonId } from '../pokemonId';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  pokemon: PokemonId;
+  sub: any;
+  id: any;
+  
+
+  constructor(private pokeApi:PokeApiService, private router:ActivatedRoute,private route:Router) { }
 
   ngOnInit() {
+    
   }
 
-  search() {
-    console.log("funzionaaa")
+  onSearch(term:string) {
+    if (term == ""){}
+    else {
+      this.route.navigate(["pokemonDetails", term])
+    }
   }
+
+  /*this.router.params.subscribe(params => {
+    this.id = params['id'];
+  });*/
+  
 }

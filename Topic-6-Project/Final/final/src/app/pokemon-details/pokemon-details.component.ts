@@ -25,7 +25,7 @@ export class PokemonDetailsComponent implements OnInit {
     this.getPokemonId();
   }
 
-  getImageUrl(id:number) { //lleva id como param
+  getImageUrl(id:number) {
     return this.pokeImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   }
 
@@ -36,5 +36,5 @@ export class PokemonDetailsComponent implements OnInit {
       .subscribe((data: PokemonId) => this.pokemon = data);
     });
   }
-
+  
 }
