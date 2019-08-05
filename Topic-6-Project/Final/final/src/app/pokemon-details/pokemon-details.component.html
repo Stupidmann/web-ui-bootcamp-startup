@@ -1,13 +1,40 @@
-<p>pokemon-details works!</p>
-
-<div *ngIf="(pokeObs | async) as poke ">
+<!--<div *ngIf="(pokeObs | async) as poke ">
         <ul>
-            <li>
-                {{poke.name}}
-            </li>
+            <li>Name: {{poke.name | titlecase}}  </li>
+            <li>Height: {{poke.height}}  </li>
+            <li>Weight: {{poke.weight}} </li>
+            <!--<li>Type: {{poke.types.type}} </li> TODO: pokemon types  
             <li>              
                 <img [src]="getImageUrl(poke.id)" >
             </li>
-        </ul>
+        </ul>        
+</div>-->
+<div *ngIf="pokemon else loading">
+    <ul>
+        <li>Name: {{pokemon.name | titlecase}}</li>
+        <li>Height: {{pokemon.height}} Ft.</li>
+        <li>Weight: {{pokemon.weight}} Lbs.</li>
+        <li>Type:
+        <ul *ngFor="let item of pokemon.types">
+                <li>{{item.type.name}}</li>
+            </ul>
+        </li>
+        <li>Abilities
+            <ul *ngFor="let item of pokemon.abilities" class="container-abilities">
+                <li>{{ item.ability.name }}</li>
+            </ul>
+        </li>
+        <li>Moveset
+            <ul *ngFor="let move of pokemon.moves | slice:0:10">
+                <li>{{move.move.name}}</li>
+            </ul>
+        </li>
+        <img [src]="getImageUrl(pokemon.id)" >
+        <img [src]="pokemon.sprites.front_shiny">
         
+    </ul>
 </div>
+
+<ng-template #loading>
+        <p>loading ...</p>
+</ng-template>

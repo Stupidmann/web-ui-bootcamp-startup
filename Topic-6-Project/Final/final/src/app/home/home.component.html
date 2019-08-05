@@ -1,11 +1,10 @@
 <h2>Some Pokemon</h2>
 <div *ngIf="pokemon$ else loading">
     <ul *ngFor="let pokemon of pokemon$.results" [routerLink]="['pokemonDetails',pokemon.name]"> 
-        <!--[routerLink]="['pokemonDetail', pokemon.name]"-->
-        <li> {{ pokemon.name}} </li>              
+        <li> {{ pokemon.name}} </li> <!--(click)="onSelect()"-->        
     </ul>
 </div>
+<div *ngIf="pokemon">
+    <img [src]="getImageUrl(pokemon.id)" >
+</div>
 
-<ng-template #loading>
-    <p>loading ...</p>
-</ng-template>

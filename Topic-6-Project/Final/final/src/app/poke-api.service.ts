@@ -27,6 +27,13 @@ export class PokeApiService {
         .pipe(catchError(this.handleError))
   }
 
+  getPokemonId(id:number): Observable<PokemonId> {
+    return this._http.get<PokemonId>(`${this.pokeUrl}${id}`)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   
 
   /*getPokemonId(id:number): Observable<PokemonId> {
