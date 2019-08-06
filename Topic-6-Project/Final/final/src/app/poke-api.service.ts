@@ -11,21 +11,22 @@ import { PokemonId } from './pokemonId';
 export class PokeApiService {
 
   pokeUrl = "http://pokeapi.co/api/v2/pokemon/";
+  pokeUrl808 = "http://pokeapi.co/api/v2/pokemon/?limit=808"
   imageURL: string;
 
   constructor(private _http:HttpClient) { }
 
   getPokemon() {
-    return this._http.get<Pokemon[]>(`${this.pokeUrl}`)
+    return this._http.get<Pokemon[]>(`${this.pokeUrl808}`)
       .pipe(
         catchError(this.handleError)
       );
   }
 
-  getDetails(id:number) {
+  /*getDetails(id:number) {
     return this._http.get<PokemonId>(`${this.pokeUrl}${id}`)
         .pipe(catchError(this.handleError))
-  }
+  }*/
 
   getPokemonId(id:number): Observable<PokemonId> {
     return this._http.get<PokemonId>(`${this.pokeUrl}${id}`)

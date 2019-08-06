@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { MyTeamComponent } from './my-team/my-team.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokeFilterPipe } from './poke-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     PokemonDetailsComponent,
     MyTeamComponent,
+    PokeFilterPipe,
   ],
   imports: [
     FormsModule,

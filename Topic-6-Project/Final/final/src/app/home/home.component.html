@@ -1,10 +1,9 @@
 <h2>Some Pokemon</h2>
+<input type="text" placeholder="Search by Name" [(ngModel)]="searchTerm"/>
+
 <div *ngIf="pokemon$ else loading">
-    <ul *ngFor="let pokemon of pokemon$.results" [routerLink]="['pokemonDetails',pokemon.name]"> 
-        <li> {{ pokemon.name}} </li> <!--(click)="onSelect()"-->        
+    <ul *ngFor="let pokemon of pokemon$.results | pokeFilter:searchTerm | slice:0:151" [routerLink]="['pokemonDetails',pokemon.name]"> 
+        <li> {{ pokemon.name}} </li>       
     </ul>
-</div>
-<div *ngIf="pokemon">
-    <img [src]="getImageUrl(pokemon.id)" >
 </div>
 
