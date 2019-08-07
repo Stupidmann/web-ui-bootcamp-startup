@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 4vh;
+    background: black;
+    border-radius: 20px;
+    color: white;
+    text-shadow: 2px 2px grey;
+    margin-bottom: 2vh;
+}
+
+div {
+    text-align: center;
+    font-family: fantasy;
+    background-color: #f0ec27;
+    border-radius: 20px;
+}
+
+

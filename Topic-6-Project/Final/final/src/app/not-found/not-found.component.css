@@ -1,0 +1,8 @@
+.image{
+    padding-top: 12rem;
+    height: -webkit-fill-available;
+    background-size:cover;
+    width:auto;
+    background-image:url('../404luxio1920x1200.jpg');
+    background-position:50% 50%;
+  }

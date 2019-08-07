@@ -1,0 +1,50 @@
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 4vh;
+    background: black;
+    border-radius: 20px;
+    color: white;
+    text-shadow: 2px 2px grey;
+    margin-bottom: 2vh;
+}
+
+form {
+    text-align: center;
+    font-family: fantasy;
+    background-color: #f0ec27;
+    border-radius: 20px;
+}
+
+li:hover {
+    background-color: #fbf973;
+    left: .1em;
+}
+
+li {
+    background: #f0ec27;    
+    margin: 1vh;
+    text-align: center;    
+    list-style: none;
+    border-radius: 20px;
+    width: 50%;
+}
+button {    
+    display: inline-block;
+    display: inline;
+    padding: 6px 15px;
+    border: 1px solid #bbb;
+    font: bold 13px arial, helvetica, sans-serif;
+    color: #555;
+}
+ul {
+    margin-left: 25%;
+}
+
+label {
+    margin: 1em;
+    border-radius: 5px;
+    background: rgb(185, 185, 175);
+    padding: 5px;
+
+}
