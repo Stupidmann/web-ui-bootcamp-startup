@@ -1,46 +1,55 @@
-<!--<div *ngIf="(pokeObs | async) as poke ">
-        <ul>
-            <li>Name: {{poke.name | titlecase}}  </li>
-            <li>Height: {{poke.height}}  </li>
-            <li>Weight: {{poke.weight}} </li>
-            <!--<li>Type: {{poke.types.type}} </li> TODO: pokemon types  
-            <li>              
-                <img [src]="getImageUrl(poke.id)" >
-            </li>
-        </ul>        
-</div>-->
+<div class="container">
+    <div class="main" *ngIf="pokemon else loading" class="grid">
+        <ul class="container up">
+            <div class="card">
+                <li>
+                    <h3>Name</h3> {{pokemon.name | titlecase}} N° {{pokemon.id}}
+                </li>
+                <div class="div_image">
+                    <div class="card">
+                        <img [src]="getImageUrl(pokemon.id)" ><p>Normal</p>
+                    </div>
+                    <div class="card">
+                        <img [src]="pokemon.sprites.front_shiny"><p>Shiny</p>
+                    </div>              
+                </div>
+                
+                <li><h3>Height</h3> {{pokemon.height}} Ft.</li>
+                <li><h3>Weight</h3> {{pokemon.weight}} Lbs.</li>
+                <li><h3 class="type">Type</h3>
+                    <ul *ngFor="let item of pokemon.types">
+                        <li>{{item.type.name | titlecase}}</li>
+                    </ul>
+                </li>
+            </div>
 
-<div *ngIf="pokemon else loading">
-    <ul>
-        <li>Name: {{pokemon.name | titlecase}}</li>
-        <li>Height: {{pokemon.height}} Ft.</li>
-        <li>Weight: {{pokemon.weight}} Lbs.</li>
-        <li>Type:
-        <ul *ngFor="let item of pokemon.types">
-                <li>{{item.type.name}}</li>
-            </ul>
-        </li>
-        <li>Abilities
-            <ul *ngFor="let item of pokemon.abilities" class="container-abilities">
-                <li>{{ item.ability.name }}</li>
-            </ul>
-        </li>
-        <li>Moveset
-            <ul *ngFor="let move of pokemon.moves | slice:0:10">
-                <li>{{move.move.name}}</li>
-            </ul>
-        </li>
-        <img [src]="getImageUrl(pokemon.id)" >
-        <img [src]="pokemon.sprites.front_shiny">
-        <li>Stats
-            <ul *ngFor="let item of pokemon.stats">
-                <li>{{item.stat.name}}: {{item.base_stat}}</li>
-            </ul>
-        </li>
-        
-    </ul>
+            <div class="card">
+                <div class="div_image">
+                    <li>
+                        <h3>Abilities</h3>
+                        <ul *ngFor="let item of pokemon.abilities" class="container-abilities">
+                            <li>{{ item.ability.name | titlecase}}</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Stats</h3>
+                        <ul *ngFor="let item of pokemon.stats">
+                            <li>{{item.stat.name | titlecase}}: {{item.base_stat}}</li>
+                        </ul>
+                    </li>
+            
+                    <li>
+                        <h3>Moveset</h3>
+                        <ul *ngFor="let move of pokemon.moves | slice:0:10">
+                            <li>{{move.move.name | titlecase}}</li>
+                        </ul>
+                    </li>
+            </div>
+            </div> 
+        </ul>
+    </div>
 </div>
 
-<ng-template #loading>
+<ng-template #loading class="main">
         <p>loading ...</p> <!--TODO: add photo for loading-->
 </ng-template>

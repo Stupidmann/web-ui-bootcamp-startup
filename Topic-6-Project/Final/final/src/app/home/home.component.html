@@ -1,9 +1,19 @@
-<h2>Some Pokemon</h2>
-<input type="text" placeholder="Search by Name" [(ngModel)]="searchTerm"/>
+<div class="final">
+<main>
+    <div class="container">
+        <div class="title">
+            <img src="../../assets/img/Pokebola-pokeball-png-0.png" width="100">
+            <h2>Gotta catch'em all</h2>
+            <img src="../../assets/img/Pokebola-pokeball-png-0.png" width="100">
+        </div>
+        <!--<img src="../../assets/img/fd18c6d26d4d9d26a0bd9d1a2fb2bd04.png" width="500" height="200">-->
+        <input type="text" placeholder="Search by Name" [(ngModel)]="searchTerm"/>
 
-<div *ngIf="pokemon$ else loading">
-    <ul *ngFor="let pokemon of pokemon$.results | pokeFilter:searchTerm | slice:0:151" [routerLink]="['pokemonDetails',pokemon.name]"> 
-        <li> {{ pokemon.name}} </li>       
-    </ul>
+        <div *ngIf="pokemon$ else loading" class="grid">
+            <ul *ngFor="let pokemon of pokemon$.results | pokeFilter:searchTerm | slice:0:151" class="card" [routerLink]="['pokemonDetails',pokemon.name]"> 
+                <li> {{ pokemon.name | titlecase}}  </li>       
+            </ul>
+        </div>
+    </div>
+</main>
 </div>
-

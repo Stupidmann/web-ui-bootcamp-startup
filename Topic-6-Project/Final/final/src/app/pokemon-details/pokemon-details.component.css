@@ -1,0 +1,47 @@
+.main {
+    padding-top: 10rem;
+    background-color: #faeb19;
+}
+
+.container {
+    width: 85%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+.container .up {
+    padding-top: 10rem; 
+}
+
+.container .up div.card ul li{
+    list-style: none;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    color:white;
+    background-color: #3a85da;
+    padding: 2rem;
+    margin: 1rem;
+    list-style: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.2s linear;
+    cursor: auto;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.div_image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+ul {
+    padding: 0%;
+}

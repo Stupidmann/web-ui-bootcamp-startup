@@ -1,0 +1,55 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+.container_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header {
+    background: #444;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li {
+    display: inline-block;
+}
+.navigation ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+.navigation ul li a:hover {
+    background: #8f8f8f;
+}
+.navigation label input{
+    display: block;
+    border-radius: 5px;
+    padding: 10px;
+}
